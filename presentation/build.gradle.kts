@@ -75,6 +75,8 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     kapt(libs.hilt.android.compiler)
 
+    implementation(libs.glide)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

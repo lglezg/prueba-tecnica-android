@@ -35,6 +35,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import mx.com.lgonzalez.domain.models.Pokemon
 import mx.com.lgonzalez.presentation.R
+import mx.com.lgonzalez.presentation.screens.second.activity.composables.PokemonCard
 import mx.com.lgonzalez.presentation.ui.theme.LocalSpacing
 import mx.com.lgonzalez.pruebatecnica.presentation.composables.CustomImage
 import mx.com.lgonzalez.pruebatecnica.presentation.second.activity.SecondActivityViewModel
@@ -119,58 +120,3 @@ private fun SecondActivityContent(
     }
 }
 
-@Composable
-fun PokemonCard(
-    modifier: Modifier,
-    pokemonDetails: Pokemon,
-    onEvent: (SecondActivityEvent) -> Unit,
-    onClick: (String) -> Unit,
-) {
-    val localSpacing = LocalSpacing.current
-    Card(
-        modifier = modifier
-            .wrapContentHeight()
-            .clickable { onClick(pokemonDetails.name) },
-        shape = MaterialTheme.shapes.small
-    ) {
-        Column {
-            IconButton(
-                modifier = Modifier.align(Alignment.End),
-                onClick = { onEvent(SecondActivityEvent.FavoritePokemonChange(pokemonDetails)) }
-            ) {
-                Icon(
-                    painter = painterResource(
-                        id = if (pokemonDetails.isFavorite)
-                            R.drawable.baseline_favorite
-                        else
-                            R.drawable.baseline_favorite_border
-                    ),
-                    contentDescription = null,
-                    tint = Color.Red
-                )
-            }
-            Row(
-                modifier = Modifier
-                    .padding(bottom = localSpacing.spaceMedium)
-                    .fillMaxSize(),
-                horizontalArrangement = Arrangement.SpaceAround,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-
-                CustomImage(
-                    modifier = Modifier
-                        .padding(end = localSpacing.spaceSmall)
-                        .size(100.dp),
-                    url = pokemonDetails.urlImage,
-                    initials = pokemonDetails.name,
-                    uri = null
-                )
-                Text(
-                    text = pokemonDetails.name,
-                    style = MaterialTheme.typography.displaySmall
-                )
-            }
-        }
-    }
-
-}

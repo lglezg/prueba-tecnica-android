@@ -3,6 +3,7 @@ package mx.com.lgonzalez.presentation.screens.third.activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -15,6 +16,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -36,6 +39,8 @@ public class PokemonDetailsActivity extends AppCompatActivity {
     private TextView textViewHeight;
 
     private TextView textViewTypes;
+
+    private ImageView imageView;
 
 
     @Override
@@ -72,6 +77,7 @@ public class PokemonDetailsActivity extends AppCompatActivity {
         textViewWeight = findViewById(R.id.textViewWeight);
         textViewHeight = findViewById(R.id.textViewHeight);
         textViewTypes = findViewById(R.id.textViewTypes);
+        imageView = findViewById(R.id.imageView);
 
 
         ibIsFavorite.setOnClickListener(v -> viewModel.favoritePokemonChange());
@@ -89,6 +95,7 @@ public class PokemonDetailsActivity extends AppCompatActivity {
             types.append(typeList.get(i)).append(" ");
         }
         textViewTypes.setText(types);
+        Glide.with(this).load(pokemon.getUrlImage()).into(imageView);
 
     }
 }
