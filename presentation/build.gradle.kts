@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.daggerHilt)
     id("kotlin-kapt")
 }
 
@@ -33,6 +34,7 @@ android {
     }
     buildFeatures {
         compose = true
+        viewBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -41,6 +43,7 @@ android {
     kapt {
         correctErrorTypes = true
     }
+
 }
 
 dependencies {
@@ -68,6 +71,8 @@ dependencies {
     implementation(libs.colorpicker.compose)
 
     implementation(libs.hilt.android)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
     kapt(libs.hilt.android.compiler)
 
     testImplementation(libs.junit)

@@ -21,6 +21,8 @@ navigationCompose = "2.5.3"
 okhttpBom = "4.12.0"
 retrofit = "2.9.0"
 roomRuntime = "2.6.1"
+activity = "1.8.0"
+constraintlayout = "2.1.4"
 
 [libraries]
 androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraintlayoutCompose" }
@@ -55,6 +57,8 @@ okhttp-bom = { module = "com.squareup.okhttp3:okhttp-bom", version.ref = "okhttp
 okhttp-okhttp = { group = "com.squareup.okhttp3", name = "okhttp" }
 okhttp-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 
 
 [plugins]

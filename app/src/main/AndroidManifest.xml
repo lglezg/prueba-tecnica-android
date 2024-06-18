@@ -30,6 +30,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="mx.com.lgonzalez.presentation.screens.third.activity.PokemonDetailsActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Pokemon"/>
     </application>
 
 </manifest>

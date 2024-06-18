@@ -2,4 +2,5 @@
 <resources>
 
     <style name="Theme.PruebaTecnicaAndroid" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.Pokemon" parent="Theme.AppCompat.Light.NoActionBar" />
 </resources>
